@@ -1,0 +1,31 @@
+
+{% extends "translator/index.html" %}
+
+{% block content %}
+
+        <div class="container">
+
+          <!--Simple Form-->
+          <h2 class="my-4">Перевод текста с изображения:</h2>
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <input type="file" name="upload" accept="image/*">
+
+                <button class="btn btn-dark my-4" type="submit">Загрузить</button>
+          </form>
+
+          <div class="row">
+            {% if file_url %}
+            <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+              <img src="{{ file_url }}" class="img-fluid">
+
+            {% else %}
+            <h4></h4>
+            {% endif %}
+          </div>
+
+        </div>
+
+
+{% endblock %}
+

@@ -1,6 +1,6 @@
 from django.core.files.storage import FileSystemStorage
 def index(request):
-    return render(request, '/translator/index.html')
+    return render(request, 'translator/index.html')
 
 from django.shortcuts import render
 
@@ -31,8 +31,8 @@ def upload(request):
         fss = FileSystemStorage()
         file = fss.save(upload.name, upload)
         file_url = fss.url(file)
-        return render(request, '/translator/upload.html', {'file_url': file_url})
-    return render(request, '/translator/upload.html')
+        return render(request, 'translator/upload.html', {'file_url': file_url})
+    return render(request, 'translator/upload.html')
 
 def transfer(mytext,lang):
     key = 'API KEY'
@@ -56,8 +56,8 @@ def translate_app(request):
 
         tr = transfer(txt,lang)
 
-        return render(request, '/translator/index.html', {"result":tr})
+        return render(request, 'translator/index.html', {"result":tr})
 
-    return render(request, '/translator/index.html')
+    return render(request, 'translator/index.html')
  except Exception as e:
      return

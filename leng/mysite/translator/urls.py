@@ -4,8 +4,8 @@ import os
 
 urlpatterns = [
 
-    path('/', views.translate_app,name="trans"),
-    path("/upload", views.upload, name="upload")
+    path('', views.translate_app,name="trans"),
+    path("upload", views.upload, name="upload")
 
 ]
 

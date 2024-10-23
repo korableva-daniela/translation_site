@@ -1,23 +1,9 @@
-from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render
-
 from django.core.files.storage import FileSystemStorage
 def index(request):
     return render(request, 'translator/index.html')
 
-
-from django.shortcuts import render, HttpResponse
-#from translate import Translator
-
-
-
 from django.shortcuts import render
-#from .form import ImageForm
 
-from django.shortcuts import render
-from .models import Book
 
 '''def home_page(request):
     # POST - обязательный метод
@@ -74,4 +60,4 @@ def translate_app(request):
 
     return render(request, 'translator/index.html')
  except Exception as e:
-     return render(request, 'translator/index.html',{"result":"ОШИБКА: Возможно, Вы забыли указать язык!"})
+     return

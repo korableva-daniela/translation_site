@@ -35,28 +35,28 @@ def upload(request):
     return render(request, 'translator/upload.html')
 
 def transfer(mytext,lang):
-    IAM_TOKEN = 'AQVN1vd5GxKyAOfXemh76NGa9BoTr8wa7_yk6H4P'
-    folder_id = 'b1g77gbdu7bkat74h03h'
-    target_language = 'lang'
-    texts = mytext
+   IAM_TOKEN = 'AQVN1vd5GxKyAOfXemh76NGa9BoTr8wa7_yk6H4P'
+   folder_id = 'ajeg2lj5srcivajdugog'
+   target_language = lang
+   texts = mytext
 
-    body = {
-      "targetLanguageCode": target_language,
-      "texts": texts,
-      "folderId": folder_id,
+   body = {
+    "targetLanguageCode": target_language,
+    "texts": texts,
+    "folderId": folder_id,
     }
 
     headers = {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer {0}".format(IAM_TOKEN)
-     }
+     "Content-Type": "application/json",
+     "Authorization": "Bearer {0}".format(IAM_TOKEN)
+    }
 
-    response = requests.post('https://translate.api.cloud.yandex.net/translate/v2/translate',
-      json = body,
-      headers = headers
-     )
-    if response['code'] == 200:
-        return  response['texts'][0]
+    r = requests.post('https://translate.api.cloud.yandex.net/translate/v2/translate',
+    json = body,
+    headers = headers
+    )
+    if r['code'] == 200:
+        return r['text'][0]
     else:
         return 'error'
 def translate_app(request):

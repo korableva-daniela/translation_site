@@ -35,7 +35,7 @@ def upload(request):
     return render(request, 'translator/upload.html')
 
 def transfer(mytext,lang):
-    key = 'API KEY'
+    key = 'AQVN1vd5GxKyAOfXemh76NGa9BoTr8wa7_yk6H4P'
     data = {'lang':lang,
             'key':key,
             'text':mytext,

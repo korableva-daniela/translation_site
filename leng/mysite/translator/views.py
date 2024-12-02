@@ -35,8 +35,8 @@ def upload(request):
     return render(request, 'translator/upload.html')
 
 def transfer(mytext,lang):
-   IAM_TOKEN = 'AQVN1vd5GxKyAOfXemh76NGa9BoTr8wa7_yk6H4P'
-   folder_id = 'ajeg2lj5srcivajdugog'
+   IAM_TOKEN = ''
+   folder_id = ''
    target_language = lang
    texts = mytext
 
